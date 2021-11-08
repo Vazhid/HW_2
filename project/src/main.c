@@ -16,15 +16,12 @@ int main() {
         str[i] = rand_char;
     }
     
-    
-    
-    
     int start_time =  clock();
     str_max = max_char(str);
     int end_time = clock();
     int search_time = end_time - start_time;
     printf("Время работы последовательного алгоритма: %dмс\n", search_time);
-
+    
 //    printf("%s\n", str_max);
 //    printf("------------------------------------------------------------\n");
 //    str_max_parallel = parallel_max_char(str);
