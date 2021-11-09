@@ -22,6 +22,14 @@ include_directories(
     ${INC_DIR}
     ${GTEST_INCLUDE_DIRS})
 
+add_library(foo STATIC
+        ${INC_DIR}/foo.h
+        ${SRC_DIR}/foo.c)
+
+target_link_libraries(TEST ${GTEST_LIBRARIES} Threads::Threads pthread -ldl foo)
+
+target_link_libraries(try Threads::Threads pthread -ldl foo)
+
 add_executable(TEST tests/main.cpp)
 
 target_include_directories(TEST PUBLIC ${INC_DIR})

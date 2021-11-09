@@ -1,4 +1,4 @@
-#ifndef foo_h
+#ifndef CPP_HW_2_PROJECT_INCLUDE_FOO_H_
 #define foo_h
 
 #include <stdio.h>
@@ -16,4 +16,4 @@ char *max_char(const char *str);
 
 char *parallel_max_char(const char *str);
 
-#endif /* foo_h */
+#endif  // CPP_HW_2_PROJECT_INCLUDE_FOO_H_

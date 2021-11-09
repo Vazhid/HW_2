@@ -3,7 +3,7 @@
 char *rand_str(char *str) {
     int rand_ascii;
     char rand_char;
-    
+
     srand(time(NULL));
 
     for (int i = 0; i < MAX; ++i) {
