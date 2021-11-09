@@ -1,5 +1,3 @@
-.. image:: https://travis-ci.com/Ilyagu/Advanced_C_HW2.svg?branch=dev
-    :target: https://travis-ci.com/Ilyagu/Advanced_C_HW2
 Вариант #18
 
 Сравните и выведите в консоль время работы последовательного и параллельного с использованием нескольких процессов алгоритмов, каждый из которых выделяет в 
