@@ -8,6 +8,7 @@ set(CMAKE_C_FLAGS "-g -Wall -Werror -Wextra -O3 -fprofile-arcs -ftest-coverage")
 set(CMAKE_CXX_FLAGS "-g -Wall -O3 -fprofile-arcs -ftest-coverage")
 
 find_package(GTest REQUIRED)
+message(STATUS "test path ${GTEST_INCLUDE_DIRS}")
 
 set(DIR ${CMAKE_CURRENT_SOURCE_DIR})
 add_definitions(-DSOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}")
@@ -21,12 +22,11 @@ include_directories(
     ${INC_DIR}
     ${GTEST_INCLUDE_DIRS})
 
-add_executable(TEST
-        tests/main.cpp)
+add_executable(TEST tests/main.cpp)
 
 target_include_directories(TEST PUBLIC ${INC_DIR})
 
-target_link_libraries(${GTEST_LIBRARIES})
+target_link_libraries(TEST ${GTEST_LIBRARIES})
 
 enable_testing()
 

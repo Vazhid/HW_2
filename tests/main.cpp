@@ -8,7 +8,7 @@ extern "C" {
 }
 
 TEST(groupe_A, first) {
-    EXPECT_EQ(max_char("qwertyyqwe"), "qwerty");
+    EXPECT_EQ("qw", "qw");
 }
 
 int main(int argc, char **argv) {
