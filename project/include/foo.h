@@ -11,7 +11,7 @@
 #include <sys/mman.h>
 #include <sys/wait.h>
 
-#define MAX 10000
+#define MAX 100000000
 
 typedef struct new_int new_int;
 

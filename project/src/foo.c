@@ -58,8 +58,6 @@ char *parallel_max_char(const char *str, int test_max) {
         return 0;
     }
     int ind_part = 0;
-    int ind_pos_part = 0;
-    int ind_neg_part = 0;
     int len_half = test_max/2;
 
     int max = 0;
@@ -76,18 +74,10 @@ char *parallel_max_char(const char *str, int test_max) {
 
     for (int i = len_half; i < test_max; ++i) {
         if (str[i] == str[i+1]) {
-            ind_pos_part = i+1;
+            ind_part = i+1;
             i = test_max;
         }
     }
-    for (int i = len_half; i > 0; --i) {
-        if (str[i] == str[i-1]) {
-            ind_neg_part = i-1;
-            i = 0;
-        }
-    }
-
-    ind_part = (len_half - ind_neg_part) < (ind_pos_part - len_half) ? ind_neg_part : ind_pos_part;
 
     long page_size = getpagesize();
 
