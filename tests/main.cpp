@@ -13,6 +13,7 @@ TEST(groupe_A, first) {
     char *max_str;
     max_str = max_char(str, 7);
     ASSERT_STREQ("werty", max_str);
+    free(max_str);
 }
 
 TEST(groupe_B, first) {
@@ -20,6 +21,7 @@ TEST(groupe_B, first) {
     char *max_str;
     max_str = parallel_max_char(str, 7);
     ASSERT_STREQ("werty", max_str);
+    free(max_str);
 }
 
 int main(int argc, char **argv) {

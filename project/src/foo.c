@@ -67,7 +67,7 @@ char *parallel_max_char(const char *str, int test_max) {
 
     int count_neg = 0;
     int max_neg = 0;
-    
+
     int ind_neg = 0;
 
     int count_pos = 0;
@@ -132,8 +132,7 @@ char *parallel_max_char(const char *str, int test_max) {
            if (childPids[ii] > 0) {
               if (waitpid(childPids[ii], NULL, WNOHANG) != 0) {
                  childPids[ii] = 0;
-              }
-              else {
+              } else {
                  stillWaiting = 1;
               }
            }
@@ -161,7 +160,7 @@ char *parallel_max_char(const char *str, int test_max) {
 
     max_neg = ptr->value;
     ind_neg = ptr->index;
-    
+
     if (max_neg < max_pos) {
         max = max_pos;
         ind = ind_pos;
