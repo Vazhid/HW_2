@@ -4,10 +4,10 @@ char *rand_str(char *str) {
     int rand_ascii;
     char rand_char;
 
-    srand(time(NULL));
+    unsigned int seed = time(NULL);
 
     for (int i = 0; i < MAX; ++i) {
-        rand_ascii = rand() % 95 + 32;
+        rand_ascii = rand_r(&seed) % 95 + 32;
         rand_char = (char)rand_ascii;
         str[i] = rand_char;
     }
