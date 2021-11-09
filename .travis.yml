@@ -21,15 +21,15 @@ install:
   - sudo pip3 install cpplint
   - sudo apt install cppcheck
   - sudo apt install libgtest-dev
+  - sudo apt-get install -y libgtest-dev
 
 before_script:
-  - sudo apt-get install -y libgtest-dev
   - cd /usr/src/gtest
-  - sudo cmake CMakeLists.txt && sudo make
+  - cmake CMakeLists.txt && sudo make
   - cd "${TRAVIS_BUILD_DIR}"/
-  - sudo mkdir build && cd build
-  - sudo cmake ..
-  - sudo make
+  - mkdir build && cd build
+  - cmake ..
+  - make
   - cd ..
   - cd ..
 
