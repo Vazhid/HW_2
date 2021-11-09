@@ -35,7 +35,11 @@ char *max_char(const char *str) {
     }
     ++max;
 
-    char *max_str = (char*) malloc(sizeof(char) * max);
+    char *max_str;
+    if ((max_str = (char*) malloc(sizeof(char) * max)) == NULL) {
+        return 0;
+    }
+
     for (int i = 0; i < max; ++i) {
         max_str[i] = str[i+ind];
     }
@@ -120,7 +124,11 @@ char *parallel_max_char(const char *str) {
         ind = ind_neg;
     }
 
-    char *max_str = (char*) malloc(sizeof(char) * max);
+    char *max_str;
+    if ((max_str = (char*) malloc(sizeof(char) * max)) == NULL) {
+        return 0;
+    }
+
     for (int i = 0; i < max; ++i) {
         max_str[i] = str[i+ind];
     }

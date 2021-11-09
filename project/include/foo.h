@@ -1,5 +1,5 @@
 #ifndef CPP_HW_2_PROJECT_INCLUDE_FOO_H_
-#define foo_h
+#define CPP_HW_2_PROJECT_INCLUDE_FOO_H_
 
 #include <stdio.h>
 #include <stdlib.h>

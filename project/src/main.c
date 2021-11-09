@@ -1,7 +1,12 @@
 #include "foo.h"
 
 int main() {
-    char *str = (char*) malloc(sizeof(char) * MAX);
+
+    char *str;
+    if ((str = (char*) malloc(sizeof(char) * MAX)) == NULL) {
+        return 0;
+    }
+
     char *str_max = NULL;
     char *str_max_parallel = NULL;
 
