@@ -7,13 +7,18 @@
 #include <unistd.h>
 #include <signal.h>
 #include <time.h>
+#include <sys/types.h>
+#include <sys/mman.h>
+#include <sys/wait.h>
 
-#define MAX 100000
+#define MAX 10000
+
+typedef struct new_int new_int;
 
 char *rand_str(char *str);
 
-char *max_char(const char *str);
+char *max_char(const char *str, int test_max);
 
-char *parallel_max_char(const char *str);
+char *parallel_max_char(const char *str, int test_max);
 
 #endif  // PROJECT_INCLUDE_FOO_H_
