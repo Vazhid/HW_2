@@ -1,9 +1,8 @@
 #include "foo.h"
 
 int main() {
-
     char *str;
-    if ((str = (char*) malloc(sizeof(char) * MAX)) == NULL) {
+    if ((str = malloc(sizeof(char) * MAX)) == NULL) {
         return 0;
     }
 

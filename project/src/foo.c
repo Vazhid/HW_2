@@ -36,7 +36,7 @@ char *max_char(const char *str) {
     ++max;
 
     char *max_str;
-    if ((max_str = (char*) malloc(sizeof(char) * max)) == NULL) {
+    if ((max_str = malloc(sizeof(char) * max)) == NULL) {
         return 0;
     }
 
@@ -125,7 +125,7 @@ char *parallel_max_char(const char *str) {
     }
 
     char *max_str;
-    if ((max_str = (char*) malloc(sizeof(char) * max)) == NULL) {
+    if ((max_str = malloc(sizeof(char) * max)) == NULL) {
         return 0;
     }
 
