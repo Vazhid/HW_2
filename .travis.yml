@@ -17,17 +17,10 @@ addons:
       - gcovr
 
 install:
-  - sudo apt -y install python3-pip
   - sudo apt-get install valgrind
   - sudo pip3 install cpplint
-  - sudo apt update
-  - sudo apt install build-essential
-  - sudo apt install libgtest-dev
-  - sudo apt-get install cmake
-  - sudo apt-get install -y gcovr
-  - sudo apt install lcov
   - sudo apt install cppcheck
-  - sudo apt install curl
+  - sudo apt install libgtest-dev
 
 before_script:
   - sudo apt-get install -y libgtest-dev
@@ -36,7 +29,6 @@ before_script:
   - cd "${TRAVIS_BUILD_DIR}"/
   - sudo mkdir build && cd build
   - sudo cmake ..
-  - sudo make clean
   - sudo make
   - cd ..
   - cd ..
