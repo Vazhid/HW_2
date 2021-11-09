@@ -23,7 +23,7 @@ char *max_char(const char *str, int test_max) {
     if (str == NULL) {
         return 0;
     }
-
+    char *max_str = NULL;
     int count = 0;
     int max = 0;
     int ind = 0;
@@ -31,7 +31,7 @@ char *max_char(const char *str, int test_max) {
     for (int i = 0; i < test_max; ++i) {
         if (str[i] != str[i-1]) {
             ++count;
-        } else {
+        } else if (str[i] == str[i-1]) {
             count = 0;
         }
         if (max < count) {
@@ -41,13 +41,19 @@ char *max_char(const char *str, int test_max) {
     }
     ++max;
 
-    char *max_str;
+
     if ((max_str = malloc(sizeof(char) * max)) == NULL) {
         return 0;
     }
 
     for (int i = 0; i < max; ++i) {
         max_str[i] = str[i+ind];
+    }
+
+    if (ind < 0) {
+        for (int i = 0; i < max; ++i) {
+            max_str[i] = str[i];
+        }
     }
 
     return max_str;
@@ -166,6 +172,12 @@ char *parallel_max_char(const char *str, int test_max) {
 
     for (int i = 0; i < max; ++i) {
         max_str[i] = str[i+ind];
+    }
+
+    if (ind < 0) {
+        for (int i = 0; i < max; ++i) {
+            max_str[i] = str[i];
+        }
     }
 
     return max_str;

@@ -14,14 +14,14 @@ int main() {
     int start_time =  clock();
     str_max = max_char(str, MAX);
     int end_time = clock();
-    int search_time = end_time - start_time;
-    printf("Время работы последовательного алгоритма: %d\n", search_time);
+    double time_spent = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+    printf("Время работы последовательного алгоритма: %f\n", time_spent);
 
-    int start_time1 =  clock();
+    int start_time_par =  clock();
     str_max = parallel_max_char(str, MAX);
-    int end_time1 = clock();
-    int search_time1 = end_time1 - start_time1;
-    printf("Время работы параллельного алгоритма: %d\n", search_time1);
+    int end_time_par = clock();
+    double time_spent_par = (double)(end_time_par - start_time_par) / CLOCKS_PER_SEC;
+    printf("Время работы параллельного алгоритма: %f\n", time_spent_par);
     free(str);
     free(str_max);
     free(str_max_parallel);
