@@ -21,21 +21,20 @@ install:
   - sudo pip3 install cpplint
   - sudo apt install cppcheck
   - sudo apt install libgtest-dev
-  - sudo apt-get install -y libgtest-dev
 
 before_script:
+  - sudo apt-get install -y libgtest-dev
   - cd /usr/src/gtest
-  - cmake CMakeLists.txt && sudo make
+  - sudo cmake CMakeLists.txt && sudo make
   - cd "${TRAVIS_BUILD_DIR}"/
-  - mkdir build && cd build
-  - cmake ..
-  - make
+  - sudo mkdir build && cd build
+  - sudo cmake ..
+  - sudo make
   - cd ..
   - cd ..
 
 script:
-  - cpplint --extensions=c,cpp /src/main.c /src/find_letters.c /include/testy/find_letters.h /test/main.cpp
+  - cpplint --extensions=c,cpp /src/main.c /src/foo.c /include/foo.h /tests/main.cpp
   - cppcheck --enable=warning,performance,portability,style --language=c++ ./
   - valgrind --track-origins=yes --child-silent-after-fork=yes --leak-check=full "${TRAVIS_BUILD_DIR}"/build/TEST
   - cd "${TRAVIS_BUILD_DIR}"/src
-  - bash <(curl -s https://codecov.io/bash)
