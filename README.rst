@@ -1,5 +1,5 @@
-.. image:: https://app.travis-ci.com/Vazhid/HW_2.svg?branch=main
-    :target: https://travis-ci.com/Vazhid/HW_2
+.. image:: https://app.travis-ci.com/Vazhid/HW_2.svg?branch=other
+    :target: https://app.travis-ci.com/Vazhid/HW_2
     
 Вариант #18
 
