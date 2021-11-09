@@ -26,16 +26,16 @@ add_library(foo STATIC
         ${INC_DIR}/foo.h
         ${SRC_DIR}/foo.c)
 
-target_link_libraries(TEST ${GTEST_LIBRARIES} Threads::Threads pthread -ldl foo)
-
-target_link_libraries(try Threads::Threads pthread -ldl foo)
-
 add_executable(TEST tests/main.cpp)
 
 target_include_directories(TEST PUBLIC ${INC_DIR})
 
 target_link_libraries(TEST ${GTEST_LIBRARIES})
 
+target_link_libraries(TEST ${GTEST_LIBRARIES} Threads::Threads pthread -ldl foo)
+
 enable_testing()
 
 add_executable(hw2 ${SRC_DIR}/main.c ${SRC_DIR}/foo.c ${INC_DIR}/foo.h)
+
+target_link_libraries(hw2 Threads::Threads pthread -ldl foo)
