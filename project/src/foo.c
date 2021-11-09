@@ -138,7 +138,6 @@ char *parallel_max_char(const char *str, int test_max) {
 
     free(childPids);
 
-
     if (p != 0) {
         for (int i = ind_part; i < test_max; ++i) {
             if (str[i] != str[i-1]) {
