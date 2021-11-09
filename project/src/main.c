@@ -2,19 +2,10 @@
 
 int main() {
     char *str = (char*) malloc(sizeof(char) * MAX);
-
-    int rand_ascii;
-    char rand_char;
     char *str_max = NULL;
     char *str_max_parallel = NULL;
     
-    srand(time(NULL));
-
-    for (int i = 0; i < MAX; ++i) {
-        rand_ascii = rand() % 95 + 32;
-        rand_char = (char)(rand_ascii);
-        str[i] = rand_char;
-    }
+    str = rand_str(str);
     
     int start_time =  clock();
     str_max = max_char(str);

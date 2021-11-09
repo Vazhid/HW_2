@@ -1,5 +1,19 @@
 #include "foo.h"
 
+char *rand_str(char *str) {
+    int rand_ascii;
+    char rand_char;
+    
+    srand(time(NULL));
+
+    for (int i = 0; i < MAX; ++i) {
+        rand_ascii = rand() % 95 + 32;
+        rand_char = (char)(rand_ascii);
+        str[i] = rand_char;
+    }
+    return str;
+}
+
 char *max_char(const char *str) {
     if (str == NULL) {
         return 0;

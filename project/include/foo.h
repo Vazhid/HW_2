@@ -10,6 +10,8 @@
 
 #define MAX 100000
 
+char *rand_str(char *str);
+
 char *max_char(const char *str);
 
 char *parallel_max_char(const char *str);
