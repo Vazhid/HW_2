@@ -8,7 +8,7 @@ char *rand_str(char *str) {
 
     for (int i = 0; i < MAX; ++i) {
         rand_ascii = rand() % 95 + 32;
-        rand_char = (char)(rand_ascii);
+        rand_char = (char)rand_ascii;
         str[i] = rand_char;
     }
     return str;
